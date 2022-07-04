@@ -41,4 +41,31 @@ Ajouter une seconde contrainte : le statut de la réponse doit être 200
 
 ## Header
 Ajouter à vos requête le header suivant 'x-jmeter': 'true'. Visualiser ce header dans vos requêtes de test.
- 
+
+## Scénarios
+
+Implémentez dans JMeter les scénarios suivant :
+
+Ce premier scénario se fera sur le site https://voconsteroid.com. 
+|  | Test Details |
+|--------------|:-----------:|
+| **Purpose** | Peak hour word search will be under examination to <br/> determine if the system can maintain response times <br/> under the highest anticipated load. <br/> This test is designed to collect performance <br/> metrics on response times and error rate. |
+| **No. of Tests** | 1 run (1 cycle) |
+| **Duration** | Ramp-up: 5/s - Steady State: 10s |
+| **Scenario Name** | Word Search Scenario |
+| **User Load / Volume** | 10 Vusers (Threads) Load |
+| **Entry Criteria** | 1. Test Environment should be stable and ready to use <br/> 2. Test Data should be available <br/> 3. Test scripts should be ready to use |
+| **Validation Criteria** | 1. The mean of the response time should be below 1.5 sec <br/> 2. The error rate should be below 5% |
+
+Ce second scénario se fera en local sur le projet product manager (https://github.com/MohammadBnei/product-management). 
+|  | Test Details |
+|--------------|:-----------:|
+| **Purpose** | Peak hour product adding will be under examination to <br/> determine if the system can maintain response times <br/> under the highest anticipated load. <br/> This test is designed to collect performance <br/> metrics on response times and error rate. |
+| **No. of Tests** | 2 run (1 cycle) |
+| **Duration** | Ramp-up: 10/s - Steady State: 20s |
+| **Scenario Name** | Product Add Scénario |
+| **User Load / Volume** | 20 Vusers (Threads) Load |
+| **Entry Criteria** | 1. Test Environment should be stable and ready to use <br/> 2. Test Data should be available <br/> 3. Test scripts should be ready to use |
+| **Validation Criteria** | 1. The mean of the response time should be below 1.5 sec <br/> 2. The error rate should be below 5% |
+Copiez ce tableau, et ajoutez une référence au script ou dossier contenant le script que vous avez créé.
+
