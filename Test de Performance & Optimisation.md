@@ -162,3 +162,34 @@ A noter qu'avec la même syntaxe, nous pouvons implémenter des fonctions (ex: *
 
 ### Config Element
 Ces élément de configuration permettent comme leur nom l'indique de configurer notre test. Outre les configurations classiques (HTTP header, cookie manager...), nous pouvons importer des données de test depuis un fichier CSV (*CSV data set config*). Cela peut s'avérer utile si l'on veut pouvoir se connecter avec différents utilisateurs prédéfinis, ou si notre application nécessite des options particulières pour pouvoir être testée. 
+
+### Post Process
+Avec les outils de post process, vous pouvez extraire des réponses des données. Ces données pourront être réinjectées dans les requêtes suivantes grâce aux variables jmeter.
+
+### JMeter CLI
+jmeter -n → cli mode
+-t "test file location" 
+-l "test result location"
+-e -o "output folder"
+
+```bash
+CURRENT_TIME=$(date "+%Y-%m-%d-%H-%M-%S")
+
+#Script Location with Name
+
+SCRIPT=my_script.jmx
+
+# CSV results
+
+FOLDER=$SCRIPT_$CURRENT_TIME
+
+RESULT=$FOLDER/result.csv
+
+LOG=$FOLDER/logs.log
+
+HTML=$FOLDER/html-report
+
+  
+
+jmeter -n -t $SCRIPT -l $RESULT -j $LOG -e -o $HTML
+```
